@@ -1,0 +1,109 @@
+<br>
+<table>
+    <td><tr>
+        <h2>Ustvari uporabnika</h2>
+        <div>
+        <form #userForm="ngForm" (ngSubmit)="create_user(userForm.value)">
+            <input #userUid="ngModel" type="text" name="id" placeholder="ID Uporabnika" minlength="3" maxlength="8" required="required" ngModel/>
+            <div class="error">
+                @if (userUid.errors?.['required'] && (userUid.touched || userUid.dirty)) {
+                    <span>Obvezno polje</span>
+                }
+                @if ((userUid.errors?.['minlength'] || userUid.errors?.['maxlength']) && userUid.touched) {
+                    <span>Mora biti med 3 in 8 znakov dolgo</span>
+                }
+            </div>
+
+            <input #userName="ngModel" type="text" name="name" placeholder="Ime" minlength="1" maxlength="20" required="required" ngModel/>
+            <div class="error">
+                @if (userName.errors?.['required'] && (userName.touched || userName.dirty)) {
+                    <span>Obvezno polje</span>
+                }
+                @if ((userName.errors?.['maxlength']) && userName.touched) {
+                    <span>Dovoljeno največ 20 znakov</span>
+                }
+            </div>
+
+            <textarea type="text" name="description" placeholder="Opis" maxlength="255" ngModel></textarea>
+            <button id="create-user" [disabled]="userForm.invalid">Dodaj</button>
+        </form>
+        </div>
+    </tr></td>
+    <td><tr>
+        <h2>Ustvari nalogo</h2>
+        <div>
+        <form #taskForm="ngForm" (ngSubmit)="create_task(taskForm.value)">
+            <input #taskUid="ngModel" type="text" name="uid" placeholder="ID Uporabnika" minlength="3" maxlength="8" required="required" ngModel/>
+            <div class="error">
+                @if (taskUid.errors?.['required'] && (taskUid.touched || taskUid.dirty)) {
+                    <span>Obvezno polje</span>
+                }
+                @if ((taskUid.errors?.['minlength'] || taskUid.errors?.['maxlength']) && taskUid.touched) {
+                    <span>Mora biti med 3 in 8 znakov dolgo</span>
+                }
+            </div>
+            
+            <textarea #taskTitle="ngModel" type="text" name="title" placeholder="Naslov" minlength="5" maxlength="100" required="required" ngModel></textarea>
+            <div class="error">
+                @if (taskTitle.errors?.['required'] && (taskTitle.touched || taskTitle.dirty)) {
+                    <span>Obvezno polje</span>
+                }
+                @if ((taskTitle.errors?.['minlength'] || taskTitle.errors?.['maxlength']) && taskTitle.touched) {
+                    <span>Mora biti med 5 in 100 znakov dolgo</span>
+                }
+            </div>
+            
+            <textarea #taskDesc="ngModel" type="text" name="description" placeholder="Opis" maxlength="255" required="required" ngModel></textarea>
+            <div class="error">
+                @if (taskDesc.errors?.['required'] && (taskDesc.touched || taskDesc.dirty)) {
+                    <span>Obvezno polje</span>
+                }
+                @if ((taskDesc.errors?.['maxlength']) && taskDesc.touched) {
+                    <span>Dovoljeno največ 255 znakov</span>
+                }
+            </div>
+            
+            <button id="create-task" [disabled]="taskForm.invalid">Dodaj</button>
+        </form>
+        </div>
+    </tr></td>
+    <td><tr>
+        <h2>Ustvari komentar</h2>
+        <div>
+        <form #commForm="ngForm" (ngSubmit)="create_comment(commForm.value)">
+            <input #commUid="ngModel" type="text" name="uid" placeholder="ID Uporabnika" minlength="3" maxlength="8" required="required" ngModel/>
+            <div class="error">
+                @if (commUid.errors?.['required'] && (commUid.touched || commUid.dirty)) {
+                    <span>Obvezno polje</span>
+                }
+                @if ((commUid.errors?.['minlength'] || commUid.errors?.['maxlength']) && commUid.touched) {
+                    <span>Mora biti med 3 in 8 znakov dolgo</span>
+                }
+            </div>
+            
+            <input #commTid="ngModel" type="number" name="tid" placeholder="ID Naloge" min="1" required="required" ngModel/>
+            <div class="error">
+                @if (commTid.errors?.['required'] && (commTid.touched || commTid.dirty)) {
+                    <span>Obvezno polje</span>
+                }
+                @if (commTid.errors?.['min'] && commTid.touched) {
+                    <span>Mora biti vsaj 1 ali več</span>
+                }
+            </div>
+
+            <textarea #commDesc="ngModel" type="text" name="contents" placeholder="Komentar" maxlength="255" required="required" ngModel></textarea>
+            <div class="error">
+                @if (commDesc.errors?.['required'] && (commDesc.touched || commDesc.dirty)) {
+                    <span>Obvezno polje</span>
+                }
+                @if ((commDesc.errors?.['maxlength']) && commDesc.touched) {
+                    <span>Dovoljeno največ 255 znakov</span>
+                }
+            </div>
+
+            <button id="create-comment" [disabled]="commForm.invalid">Dodaj</button>
+        </form>
+        </div>
+    </tr></td>
+</table>
+

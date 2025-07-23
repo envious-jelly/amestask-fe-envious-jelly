@@ -1,0 +1,28 @@
+<h2>{{title}}</h2>
+<p style="font-size: meduim; font-style: italic;">Namig: Klikni na id uporabnika za podrobnosti!</p>
+
+<div class="search-div">
+    <input type="text" [(ngModel)]="search_term" maxlength="8" required="required" />
+    <button id="search">Išči</button>
+</div>
+<br>
+
+<table>
+    <td>
+        <tr>Vsi</tr>
+        <tr>
+            <ul>
+                <li *ngFor="let u of users"><a routerLink="/user/{{u.id}}">{{u.id}}</a></li>
+            </ul>
+        </tr>
+    </td>
+    <td>
+        <tr>Rezultati iskanja</tr>
+        <tr>
+            <ul>
+                <li *ngFor="let su of search_users"><a routerLink="/user/{{su.id}}">{{su.id}}</a></li>
+            </ul>
+        </tr>
+    </td>
+</table>
+

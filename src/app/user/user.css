@@ -1,0 +1,12 @@
+#desc {
+    border-radius: 0.75em;
+    border: 1px solid black;
+    width: fit-content;
+
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 40px;
+    max-height: 50px;
+    padding: 5px;
+    box-sizing: content-box;
+}

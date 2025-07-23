@@ -1,0 +1,94 @@
+:host {
+    --bright-blue: oklch(51.01% 0.274 263.83);
+    --french-violet: oklch(47.66% 0.246 305.88); 
+        --clr: var(--french-violet);
+}
+
+ul li {
+    list-style-type: ' ';
+    border-radius: 0.5em;
+    padding: 1px;
+    padding-left: 4px;
+    margin-bottom: 4px;
+    width: 100%;
+
+    background: color-mix(in srgb, var(--bright-blue) 5%, transparent);
+    color: var(--bright-blue);
+}
+
+td:nth-of-type(2n) tr ul li {
+    background: color-mix(in srgb, var(--french-violet) 5%, transparent);
+    color: var(--french-violet);
+}
+
+ul {
+    width: 100%;
+    align-items: center;
+    padding: 0;
+}
+
+table, td, tr, th {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+td, th {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.search-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.search-div button {
+    width: 10%;
+}
+
+.search-div input {
+    width: 39.5%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}
+
+input {
+    border-radius: 1em;
+    --clr: var(--french-violet);
+    border: 2px var(--clr) solid;
+    padding: 4px 6px 4px 6px;
+    margin-right: 2px;
+}
+
+button {
+    border-radius: 1em;
+    --clr: var(--french-violet);
+    border: 2px var(--clr) solid;
+    background-color: var(--clr);
+    color: white;
+    padding: 4px 6px 4px 6px;
+}
+
+button:hover {
+    --clr: inherit;
+    border: 2px color-mix(in srgb, var(--clr) 65%, transparent) solid;
+    background-color: color-mix(in srgb, var(--clr) 65%, transparent);
+    cursor: pointer;
+}
