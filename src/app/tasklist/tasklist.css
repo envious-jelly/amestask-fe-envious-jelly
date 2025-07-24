@@ -1,20 +1,43 @@
-#desc {
-    border-radius: 0.75em;
-    border: 1px solid black;
-    width: fit-content;
+:host {
+--electric-violet: oklch(53.18% 0.28 296.97);
+}
 
-    min-width: 100%;
-    max-width: 100%;
+.desc {
+    border-radius: 0.75em;
+    border: 2px solid var(--electric-violet);
+    background-color: white;
+    color: var(--electric-violet);
+    width: 100%;
+
+    min-width: 50%;
+    max-width: 98%;
     min-height: 40px;
     max-height: 50px;
     padding: 5px;
     box-sizing: content-box;
 
-    margin-bottom: 15px;
+    margin-top: 4px;
 }
 
 p {
     margin: 0;
-    margin-bottom: 3px;
     padding: 0;
+}
+
+.uid {
+    font-size: 11pt;
+}
+
+div {
+    color: white;
+}
+
+.cont {
+    border-radius: 0.75em;
+    background-color: color-mix(in srgb, var(--electric-violet) 40%, transparent);
+    width: 100%;
+    box-sizing: content-box;
+    padding: 10px;
+
+    margin-bottom: 15px;
 }

@@ -31,7 +31,7 @@ td:nth-of-type(3n + 3) {
 
 td {
     --clr: var(--bright-blue);
-    background-color: color-mix(in srgb, var(--clr) 10%, transparent);
+    background-color: color-mix(in srgb, var(--clr) 25%, transparent);
     width: calc(100%/3);
     box-sizing: border-box;
     border-radius: 1.5em;
@@ -84,6 +84,11 @@ textarea {
     width: 100%;
     height: 150px;
     resize: none;
+
+    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+    font-size: 10pt;
 }
 
 textarea[name="title"] {
@@ -92,8 +97,14 @@ textarea[name="title"] {
 
 .error {
     text-align: left;
-    color: red;
+    color: var(--hot-red);
     font-size: 9pt;
     text-indent: 4px;
     width: fit-content;
+}
+
+h2 {
+    --clr: inherit;
+    color: var(--clr);
+    filter: brightness(40%);
 }
