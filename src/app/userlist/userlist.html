@@ -1,9 +1,11 @@
-<h2>{{title}}</h2>
-<p style="font-size: meduim; font-style: italic;">Namig: Klikni na id uporabnika za podrobnosti!</p>
+<h1>{{title}}</h1>
+<p-toast />
+<p-message closable severity="info" size="small">Namig: Klikni na uporabnikovo ime za podrobnosti!</p-message>
+<br>
 
 <div class="search-div">
     <input type="text" [(ngModel)]="search_term" maxlength="8" required="required" />
-    <button id="search">Išči</button>
+    <button id="search" type="button" (click)="search()" clickable>Išči</button>
 </div>
 <br>
 

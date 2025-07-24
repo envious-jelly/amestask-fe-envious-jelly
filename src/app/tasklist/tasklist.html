@@ -1,8 +1,9 @@
 <h1>{{title}}</h1>
 
 @for (t of tasks; track t.id) {
-<div>
+<div class="cont">
     <p><b>{{t.title}}</b> [{{t.id}}]</p>
-    <div id="desc">{{t.description}}</div>
+    <p class="uid">&#64;{{t.uid}}</p>
+    <div class="desc">{{t.description}}</div>
 </div>
 }
